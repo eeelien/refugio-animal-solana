@@ -42,6 +42,20 @@ export const ARTWORKS: Artwork[] = [
     imageUrl: 'https://pub-79dff3b50b29432ba6d3f85b0af33331.r2.dev/refugio/39eliens-obra-02.jpg',
     proceeds: '100% al refugio',
   },
+  {
+    id: 'pepe-moon',
+    title: 'Niko es Ponja — To the Moon',
+    artist: '39eliens',
+    artistHandle: '@39eliens',
+    description: 'Pepe hace autostop en la luna con sus Bitcoins, mientras la Tierra flota y la pizza vuela. Collage digital crypto-culture. La obra más degen del refugio.',
+    price_sol: 0.32,
+    edition: '1/1',
+    emoji: '🐸',
+    color: 'orange',
+    available: true,
+    imageUrl: 'https://pub-79dff3b50b29432ba6d3f85b0af33331.r2.dev/refugio/39eliens-obra-03.jpg',
+    proceeds: '100% al refugio',
+  },
 ]
 
 export const COLOR_MAP: Record<string, string> = {
