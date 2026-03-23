@@ -147,6 +147,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gallery CTA */}
+      <section className="px-4 py-10 bg-gradient-to-r from-purple-50 to-pink-50 border-t">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-2xl mb-2">🎨</p>
+          <h3 className="font-bold text-gray-800 mb-2">Arte NFT a beneficio del refugio</h3>
+          <p className="text-sm text-gray-600 mb-4">Compra una obra digital. 100% va a croquetas y medicamentos.</p>
+          <a href="/galeria" className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-xl transition-colors text-sm">
+            Ver Galería NFT 🖼️
+          </a>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="text-center py-8 text-sm text-gray-400 border-t">
         <p>Refugio Animal Solana — WayLearn × Solana Foundation Hackathon 2026</p>
