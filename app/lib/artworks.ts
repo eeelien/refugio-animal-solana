@@ -10,46 +10,22 @@ export interface Artwork {
   color: string
   available: boolean
   proceeds: string
+  imageUrl?: string
 }
 
 export const ARTWORKS: Artwork[] = [
   {
-    id: 'enola-portrait',
-    title: 'Enola — Libre',
+    id: 'cosmica-01',
+    title: 'Cósmica I — El Ojo que Todo lo Ve',
     artist: '39eliens',
     artistHandle: '@39eliens',
-    description: 'Retrato digital de Enola, la labradora que espera su hogar. Arte generativo con alma.',
-    price_sol: 0.05,
+    description: 'Ser de otro mundo, con el ojo que registra cada vida. Arte digital original de 39eliens. 100% de lo recaudado va al refugio.',
+    price_sol: 0.32,
     edition: '1/1',
-    emoji: '🐕',
-    color: 'amber',
-    available: true,
-    proceeds: '100% al refugio',
-  },
-  {
-    id: 'hilary-resilience',
-    title: 'Hilary — Resistencia',
-    artist: '39eliens',
-    artistHandle: '@39eliens',
-    description: 'Hilary lleva sus cuidados especiales con dignidad. Obra dedicada a todos los que no se rinden.',
-    price_sol: 0.08,
-    edition: '1/1',
-    emoji: '🐈',
+    emoji: '🌌',
     color: 'purple',
     available: true,
-    proceeds: '100% al refugio',
-  },
-  {
-    id: 'shelter-collective',
-    title: 'El Refugio — Colectivo',
-    artist: '39eliens',
-    artistHandle: '@39eliens',
-    description: 'Los cinco: Enola, Gidbey, Lory, Tasha e Hilary. Juntos. Una sola obra, un solo corazón.',
-    price_sol: 0.15,
-    edition: '1/3',
-    emoji: '🐾',
-    color: 'rose',
-    available: true,
+    imageUrl: 'https://pub-79dff3b50b29432ba6d3f85b0af33331.r2.dev/refugio/39eliens-obra-01.jpg',
     proceeds: '100% al refugio',
   },
 ]

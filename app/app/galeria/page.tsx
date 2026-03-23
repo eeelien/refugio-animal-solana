@@ -54,11 +54,16 @@ export default function Galeria() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {ARTWORKS.map(art => (
             <div key={art.id} className={`rounded-2xl border-2 p-5 transition-all ${COLOR_MAP[art.color]}`}>
-              {/* Artwork placeholder */}
-              <div className="w-full aspect-square rounded-xl mb-4 flex items-center justify-center text-8xl"
-                style={{ background: 'rgba(0,0,0,0.04)' }}>
-                {art.emoji}
-              </div>
+              {/* Artwork */}
+              {art.imageUrl ? (
+                <img src={art.imageUrl} alt={art.title}
+                  className="w-full aspect-square rounded-xl mb-4 object-cover" />
+              ) : (
+                <div className="w-full aspect-square rounded-xl mb-4 flex items-center justify-center text-8xl"
+                  style={{ background: 'rgba(0,0,0,0.04)' }}>
+                  {art.emoji}
+                </div>
+              )}
               <div className="flex items-start justify-between mb-1 gap-2">
                 <h3 className="font-bold text-gray-800 text-base leading-tight">{art.title}</h3>
                 <span className={`text-xs px-2 py-0.5 rounded-full font-mono shrink-0 ${BADGE_MAP[art.color]}`}>
