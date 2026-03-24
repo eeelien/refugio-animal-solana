@@ -64,8 +64,8 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative px-4 py-16 text-center max-w-3xl mx-auto" style={{zIndex:1}}>
-        {/* Hero: logo + Solana S side by side */}
-        <div className="flex justify-center items-center gap-6 mb-6">
+        {/* Hero: logo + Solana S below */}
+        <div className="flex flex-col items-center mb-6 gap-3">
           <img
             src="https://pub-79dff3b50b29432ba6d3f85b0af33331.r2.dev/refugio/logo-hero.png"
             alt="Refugio Animal"
@@ -75,8 +75,8 @@ export default function Home() {
           <img
             src="/solana-logo.svg"
             alt="Solana"
-            className="w-16 sm:w-20"
-            style={{filter:'drop-shadow(0 0 20px #14F195)'}}
+            className="w-28 sm:w-36"
+            style={{filter:'drop-shadow(0 0 16px #14F195)'}}
           />
         </div>
         <p className="text-lg mb-2" style={{color:'rgba(255,255,255,0.7)'}}>Adopta mascotas y dona con un click — powered by Solana Blinks</p>
