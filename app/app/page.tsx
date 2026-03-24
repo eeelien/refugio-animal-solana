@@ -66,7 +66,12 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {DEMO_PETS.map(pet => (
             <div key={pet.id} className={`rounded-2xl border-2 p-5 transition-all duration-200 ${colorMap[pet.color]}`}>
-              <div className="text-5xl mb-3 text-center">{pet.emoji}</div>
+              {pet.imageUrl ? (
+                <img src={pet.imageUrl} alt={pet.nombre}
+                  className="w-full aspect-square rounded-xl mb-3 object-cover" />
+              ) : (
+                <div className="text-5xl mb-3 text-center">{pet.emoji}</div>
+              )}
               <div className="flex items-center justify-between mb-1">
                 <h3 className="text-xl font-bold text-gray-800">{pet.nombre}</h3>
                 <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${badgeMap[pet.color]}`}>

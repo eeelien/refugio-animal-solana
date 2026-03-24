@@ -8,6 +8,7 @@ export interface Pet {
   adoptado: boolean
   descripcion: string
   color: string
+  imageUrl?: string
 }
 
 export const DEMO_PETS: Pet[] = [
@@ -21,6 +22,7 @@ export const DEMO_PETS: Pet[] = [
     adoptado: false,
     descripcion: 'Labrador juguetona y llena de energía. Le encanta correr y dar besos.',
     color: 'amber',
+    imageUrl: 'https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=400&fit=crop&auto=format',
   },
   {
     id: 'gidbey',
@@ -32,6 +34,7 @@ export const DEMO_PETS: Pet[] = [
     adoptado: false,
     descripcion: 'Pastor leal y protector. Ideal para familias con niños.',
     color: 'orange',
+    imageUrl: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=400&fit=crop&auto=format',
   },
   {
     id: 'lory',
@@ -43,6 +46,7 @@ export const DEMO_PETS: Pet[] = [
     adoptado: false,
     descripcion: 'Gatita curiosa y traviesa. Muy cariñosa una vez que te conoce.',
     color: 'yellow',
+    imageUrl: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=400&fit=crop&auto=format',
   },
   {
     id: 'tasha',
@@ -54,6 +58,7 @@ export const DEMO_PETS: Pet[] = [
     adoptado: false,
     descripcion: 'Pequeña y elegante. Perfecta para departamentos, tranquila y amorosa.',
     color: 'rose',
+    imageUrl: 'https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=400&h=400&fit=crop&auto=format',
   },
   {
     id: 'hilary',
@@ -65,6 +70,7 @@ export const DEMO_PETS: Pet[] = [
     adoptado: false,
     descripcion: 'Necesita cuidados especiales, pero tiene el corazón más grande del refugio.',
     color: 'purple',
+    imageUrl: 'https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?w=400&h=400&fit=crop&auto=format',
   },
 ]
 
