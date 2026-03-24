@@ -49,7 +49,9 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
       {/* Hero */}
       <section className="px-4 py-16 text-center max-w-3xl mx-auto">
-        <div className="text-6xl mb-4">🐾</div>
+        <div className="flex justify-center mb-4">
+          <img src="/paw-pixel.svg" alt="paw" className="w-16 h-16" style={{imageRendering:'pixelated'}} />
+        </div>
         <h1 className="text-4xl font-bold text-gray-800 mb-3">Refugio Animal Solana</h1>
         <p className="text-lg text-gray-600 mb-2">Adopta mascotas y dona con un click — powered by Solana Blinks</p>
         <div className="flex flex-wrap justify-center gap-2 mt-4 text-sm">

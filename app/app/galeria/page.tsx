@@ -21,7 +21,8 @@ export default function Galeria() {
       {/* Header */}
       <nav className="px-6 py-4 flex items-center justify-between border-b bg-white/80 backdrop-blur">
         <Link href="/" className="font-bold text-gray-800 flex items-center gap-2">
-          🐾 Refugio Animal Solana
+          <img src="/paw-pixel.svg" alt="paw" className="w-7 h-7" style={{imageRendering:'pixelated'}} />
+          Refugio Animal Solana
         </Link>
         <span className="text-sm text-purple-600 font-medium">🎨 Galería NFT</span>
       </nav>
