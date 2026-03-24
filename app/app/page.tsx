@@ -46,32 +46,59 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
+    <main className="min-h-screen" style={{background: '#0a0a0f'}}>
+      {/* Futuristic animated background */}
+      <style>{`
+        @keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(30px,-20px) scale(1.1)} }
+        @keyframes float2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-20px,30px) scale(0.9)} }
+        @keyframes float3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(20px,20px) scale(1.05)} }
+        @keyframes gridmove { 0%{background-position:0 0} 100%{background-position:40px 40px} }
+        .sol-blob1{animation:float1 8s ease-in-out infinite}
+        .sol-blob2{animation:float2 10s ease-in-out infinite}
+        .sol-blob3{animation:float3 12s ease-in-out infinite}
+        .sol-grid{animation:gridmove 4s linear infinite}
+      `}</style>
+
+      {/* Background blobs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{zIndex:0}}>
+        <div className="sol-blob1 absolute rounded-full opacity-20"
+          style={{width:500,height:500,top:'-10%',left:'-10%',background:'radial-gradient(circle, #9945FF, transparent 70%)'}}/>
+        <div className="sol-blob2 absolute rounded-full opacity-15"
+          style={{width:600,height:600,top:'30%',right:'-15%',background:'radial-gradient(circle, #14F195, transparent 70%)'}}/>
+        <div className="sol-blob3 absolute rounded-full opacity-10"
+          style={{width:400,height:400,bottom:'-5%',left:'30%',background:'radial-gradient(circle, #9945FF, #14F195, transparent 70%)'}}/>
+        {/* Grid overlay */}
+        <div className="sol-grid absolute inset-0 opacity-5"
+          style={{backgroundImage:'linear-gradient(#14F195 1px,transparent 1px),linear-gradient(90deg,#14F195 1px,transparent 1px)',backgroundSize:'40px 40px'}}/>
+      </div>
+
       {/* Hero */}
-      <section className="px-4 py-16 text-center max-w-3xl mx-auto">
+      <section className="relative px-4 py-16 text-center max-w-3xl mx-auto" style={{zIndex:1}}>
         <div className="flex justify-center mb-4">
-          <img src="/paw-pixel.svg" alt="paw" className="w-16 h-16" style={{imageRendering:'pixelated'}} />
+          <img src="/paw-pixel.svg" alt="paw" className="w-16 h-16" style={{imageRendering:'pixelated', filter:'drop-shadow(0 0 16px #9945FF)'}} />
         </div>
-        <h1 className="text-4xl font-bold text-gray-800 mb-3">Refugio Animal Solana</h1>
-        <p className="text-lg text-gray-600 mb-2">Adopta mascotas y dona con un click — powered by Solana Blinks</p>
+        <h1 className="text-4xl font-bold mb-2" style={{color:'#fff', textShadow:'0 0 30px rgba(153,69,255,0.5)'}}>
+          Refugio Animal
+        </h1>
+        {/* Solana logo as wordmark */}
+        <div className="flex justify-center mb-4">
+          <img src="/solana-logo.svg" alt="Solana" className="h-10 w-auto" style={{filter:'drop-shadow(0 0 12px #14F195)'}}/>
+        </div>
+        <p className="text-lg mb-2" style={{color:'rgba(255,255,255,0.7)'}}>Adopta mascotas y dona con un click — powered by Solana Blinks</p>
         <div className="flex flex-wrap justify-center gap-2 mt-4 text-sm">
-          <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full">✅ Devnet Live</span>
-          <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full">⚡ Blinks Ready</span>
-          <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full">🤖 AI Agent</span>
+          <span className="px-3 py-1 rounded-full border text-xs font-medium" style={{background:'rgba(20,241,149,0.1)',borderColor:'rgba(20,241,149,0.3)',color:'#14F195'}}>✅ Devnet Live</span>
+          <span className="px-3 py-1 rounded-full border text-xs font-medium" style={{background:'rgba(153,69,255,0.1)',borderColor:'rgba(153,69,255,0.3)',color:'#c084fc'}}>⚡ Blinks Ready</span>
+          <span className="px-3 py-1 rounded-full border text-xs font-medium" style={{background:'rgba(153,69,255,0.1)',borderColor:'rgba(153,69,255,0.3)',color:'#c084fc'}}>🤖 AI Agent</span>
         </div>
-        <div className="flex justify-center items-center gap-2 mt-4">
-          <span className="text-xs text-gray-400">Powered by</span>
-          <img src="/solana-logo.svg" alt="Solana" className="h-4 w-auto"/>
-        </div>
-        <p className="text-xs text-gray-400 mt-1">Program: {PROGRAM_ID} ({NETWORK})</p>
+        <p className="text-xs mt-3" style={{color:'rgba(255,255,255,0.3)'}}>Program: {PROGRAM_ID} ({NETWORK})</p>
       </section>
 
       {/* Pets Grid */}
-      <section className="px-4 pb-12 max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Mascotas en adopción</h2>
+      <section className="relative px-4 pb-12 max-w-5xl mx-auto" style={{zIndex:1}}>
+        <h2 className="text-2xl font-bold mb-6 text-center" style={{color:"#fff"}}>Mascotas en adopción</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {DEMO_PETS.map(pet => (
-            <div key={pet.id} className={`rounded-2xl border-2 p-5 transition-all duration-200 ${colorMap[pet.color]}`}>
+            <div key={pet.id} className="rounded-2xl p-5 transition-all duration-200 hover:scale-105" style={{background:"rgba(255,255,255,0.05)",border:"1px solid rgba(153,69,255,0.3)",backdropFilter:"blur(10px)"}}>
               {pet.imageUrl ? (
                 <img src={pet.imageUrl} alt={pet.nombre}
                   className="w-full aspect-square rounded-xl mb-3 object-cover" />
@@ -79,18 +106,18 @@ export default function Home() {
                 <div className="text-5xl mb-3 text-center">{pet.emoji}</div>
               )}
               <div className="flex items-center justify-between mb-1">
-                <h3 className="text-xl font-bold text-gray-800">{pet.nombre}</h3>
+                <h3 className="text-xl font-bold" style={{color:"#fff"}}>{pet.nombre}</h3>
                 <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${badgeMap[pet.color]}`}>
                   {pet.especie}
                 </span>
               </div>
-              <p className="text-sm text-gray-500 mb-1">{pet.edad} {pet.edad === 1 ? 'año' : 'años'}</p>
+              <p className="text-sm mb-1" style={{color:"rgba(255,255,255,0.5)"}}>{pet.edad} {pet.edad === 1 ? 'año' : 'años'}</p>
               {pet.enfermo && (
                 <span className="text-xs px-2 py-0.5 bg-red-100 text-red-600 rounded-full mb-2 inline-block">
                   💊 Necesita cuidados
                 </span>
               )}
-              <p className="text-sm text-gray-600 mb-4 leading-relaxed">{pet.descripcion}</p>
+              <p className="text-sm mb-4 leading-relaxed" style={{color:"rgba(255,255,255,0.6)"}}>{pet.descripcion}</p>
 
               <div className="space-y-2">
                 <a
