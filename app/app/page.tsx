@@ -59,7 +59,11 @@ export default function Home() {
           <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full">⚡ Blinks Ready</span>
           <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full">🤖 AI Agent</span>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Program: {PROGRAM_ID} ({NETWORK})</p>
+        <div className="flex justify-center items-center gap-2 mt-4">
+          <span className="text-xs text-gray-400">Powered by</span>
+          <img src="/solana-logo.svg" alt="Solana" className="h-4 w-auto"/>
+        </div>
+        <p className="text-xs text-gray-400 mt-1">Program: {PROGRAM_ID} ({NETWORK})</p>
       </section>
 
       {/* Pets Grid */}

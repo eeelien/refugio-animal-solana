@@ -147,7 +147,11 @@ export default function Galeria() {
 
       <footer className="text-center py-6 text-sm text-gray-400 border-t">
         <Link href="/" className="text-purple-500 hover:underline">← Volver al refugio</Link>
-        <p className="mt-1">Arte en Solana devnet · Refugio Animal Solana × WayLearn 2026</p>
+        <div className="flex justify-center items-center gap-2 mt-1">
+          <span>Arte en</span>
+          <img src="/solana-logo.svg" alt="Solana" className="h-3 w-auto inline"/>
+          <span>devnet · Refugio Animal Solana × WayLearn 2026</span>
+        </div>
       </footer>
     </main>
   )
