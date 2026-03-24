@@ -73,15 +73,8 @@ export default function Home() {
             style={{filter:'drop-shadow(0 0 40px rgba(153,69,255,0.7))'}}
           />
           <div className="flex items-center gap-3">
-            <img src="/solana-logo.svg" alt="S" className="h-7 w-auto" style={{filter:'drop-shadow(0 0 8px #14F195)'}}/>
-            <span className="text-3xl sm:text-4xl font-bold"
-              style={{
-                background:'linear-gradient(90deg, #9945FF, #14F195)',
-                WebkitBackgroundClip:'text',
-                WebkitTextFillColor:'transparent',
-                backgroundClip:'text',
-                letterSpacing:'0.2em'
-              }}>
+            <img src="/solana-logo.svg" alt="S" className="h-10 w-auto" style={{filter:'drop-shadow(0 0 10px #14F195)'}}/>
+            <span className="text-2xl sm:text-3xl font-bold text-white" style={{letterSpacing:'0.25em'}}>
               SOLANA
             </span>
           </div>
