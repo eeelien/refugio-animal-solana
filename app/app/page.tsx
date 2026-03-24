@@ -72,16 +72,19 @@ export default function Home() {
             className="w-72 sm:w-96"
             style={{filter:'drop-shadow(0 0 40px rgba(153,69,255,0.7))'}}
           />
-          <span className="text-3xl sm:text-4xl font-bold"
-            style={{
-              background:'linear-gradient(90deg, #9945FF, #14F195)',
-              WebkitBackgroundClip:'text',
-              WebkitTextFillColor:'transparent',
-              backgroundClip:'text',
-              letterSpacing:'0.2em'
-            }}>
-            SOLANA
-          </span>
+          <div className="flex items-center gap-3">
+            <img src="/solana-logo.svg" alt="S" className="h-7 w-auto" style={{filter:'drop-shadow(0 0 8px #14F195)'}}/>
+            <span className="text-3xl sm:text-4xl font-bold"
+              style={{
+                background:'linear-gradient(90deg, #9945FF, #14F195)',
+                WebkitBackgroundClip:'text',
+                WebkitTextFillColor:'transparent',
+                backgroundClip:'text',
+                letterSpacing:'0.2em'
+              }}>
+              SOLANA
+            </span>
+          </div>
         </div>
         <p className="text-lg mb-2" style={{color:'rgba(255,255,255,0.7)'}}>Adopta mascotas y dona con un click — powered by Solana Blinks</p>
         <div className="flex flex-wrap justify-center gap-2 mt-4 text-sm">
