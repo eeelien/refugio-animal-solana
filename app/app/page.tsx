@@ -1,5 +1,7 @@
 'use client'
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
+const StarField = dynamic(() => import('./components/StarField'), { ssr: false })
 import { DEMO_PETS, PROGRAM_ID, NETWORK } from '@/lib/pets'
 
 const colorMap: Record<string, string> = {
@@ -47,6 +49,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen" style={{background: '#0a0a0f'}}>
+      <StarField />
       {/* Futuristic animated background */}
       <style>{`
         @keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(30px,-20px) scale(1.1)} }
@@ -59,34 +62,22 @@ export default function Home() {
         .sol-grid{animation:gridmove 4s linear infinite}
       `}</style>
 
-      {/* Background blobs */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{zIndex:0}}>
-        <div className="sol-blob1 absolute rounded-full opacity-20"
-          style={{width:500,height:500,top:'-10%',left:'-10%',background:'radial-gradient(circle, #9945FF, transparent 70%)'}}/>
-        <div className="sol-blob2 absolute rounded-full opacity-15"
-          style={{width:600,height:600,top:'30%',right:'-15%',background:'radial-gradient(circle, #14F195, transparent 70%)'}}/>
-        <div className="sol-blob3 absolute rounded-full opacity-10"
-          style={{width:400,height:400,bottom:'-5%',left:'30%',background:'radial-gradient(circle, #9945FF, #14F195, transparent 70%)'}}/>
-        {/* Grid overlay */}
-        <div className="sol-grid absolute inset-0 opacity-5"
-          style={{backgroundImage:'linear-gradient(#14F195 1px,transparent 1px),linear-gradient(90deg,#14F195 1px,transparent 1px)',backgroundSize:'40px 40px'}}/>
-      </div>
-
       {/* Hero */}
       <section className="relative px-4 py-16 text-center max-w-3xl mx-auto" style={{zIndex:1}}>
-        {/* Hero logo */}
-        <div className="flex justify-center mb-6">
+        {/* Hero: logo + Solana S side by side */}
+        <div className="flex justify-center items-center gap-6 mb-6">
           <img
             src="https://pub-79dff3b50b29432ba6d3f85b0af33331.r2.dev/refugio/logo-hero.png"
             alt="Refugio Animal"
-            className="w-full max-w-lg"
-            style={{filter:'drop-shadow(0 0 40px rgba(153,69,255,0.6))'}}
+            className="w-72 sm:w-96"
+            style={{filter:'drop-shadow(0 0 40px rgba(153,69,255,0.7))'}}
           />
-        </div>
-        {/* Solana logo as wordmark */}
-        <div className="flex justify-center items-center gap-2 mb-4">
-          <span className="text-sm" style={{color:'rgba(255,255,255,0.5)'}}>powered by</span>
-          <img src="/solana-logo.svg" alt="Solana" className="h-5 w-auto" style={{filter:'drop-shadow(0 0 8px #14F195)'}}/>
+          <img
+            src="/solana-logo.svg"
+            alt="Solana"
+            className="w-16 sm:w-20"
+            style={{filter:'drop-shadow(0 0 20px #14F195)'}}
+          />
         </div>
         <p className="text-lg mb-2" style={{color:'rgba(255,255,255,0.7)'}}>Adopta mascotas y dona con un click — powered by Solana Blinks</p>
         <div className="flex flex-wrap justify-center gap-2 mt-4 text-sm">
