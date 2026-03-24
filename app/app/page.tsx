@@ -74,15 +74,19 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative px-4 py-16 text-center max-w-3xl mx-auto" style={{zIndex:1}}>
-        <div className="flex justify-center mb-4">
-          <img src="/paw-pixel.svg" alt="paw" className="w-16 h-16" style={{imageRendering:'pixelated', filter:'drop-shadow(0 0 16px #9945FF)'}} />
+        {/* Hero logo */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="https://pub-79dff3b50b29432ba6d3f85b0af33331.r2.dev/refugio/logo-hero.png"
+            alt="Refugio Animal"
+            className="w-full max-w-lg"
+            style={{filter:'drop-shadow(0 0 40px rgba(153,69,255,0.6))'}}
+          />
         </div>
-        <h1 className="text-4xl font-bold mb-2" style={{color:'#fff', textShadow:'0 0 30px rgba(153,69,255,0.5)'}}>
-          Refugio Animal
-        </h1>
         {/* Solana logo as wordmark */}
-        <div className="flex justify-center mb-4">
-          <img src="/solana-logo.svg" alt="Solana" className="h-10 w-auto" style={{filter:'drop-shadow(0 0 12px #14F195)'}}/>
+        <div className="flex justify-center items-center gap-2 mb-4">
+          <span className="text-sm" style={{color:'rgba(255,255,255,0.5)'}}>powered by</span>
+          <img src="/solana-logo.svg" alt="Solana" className="h-5 w-auto" style={{filter:'drop-shadow(0 0 8px #14F195)'}}/>
         </div>
         <p className="text-lg mb-2" style={{color:'rgba(255,255,255,0.7)'}}>Adopta mascotas y dona con un click — powered by Solana Blinks</p>
         <div className="flex flex-wrap justify-center gap-2 mt-4 text-sm">
