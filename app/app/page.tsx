@@ -64,20 +64,34 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative px-4 py-16 text-center max-w-3xl mx-auto" style={{zIndex:1}}>
-        {/* Hero: logo + Solana S below */}
-        <div className="flex flex-col items-center mb-6 gap-3">
+        {/* Hero: logo + Solana badge below */}
+        <div className="flex flex-col items-center mb-6 gap-4">
           <img
             src="https://pub-79dff3b50b29432ba6d3f85b0af33331.r2.dev/refugio/logo-hero.png"
             alt="Refugio Animal"
             className="w-72 sm:w-96"
             style={{filter:'drop-shadow(0 0 40px rgba(153,69,255,0.7))'}}
           />
-          <img
-            src="/solana-logo.svg"
-            alt="Solana"
-            className="w-28 sm:w-36"
-            style={{filter:'drop-shadow(0 0 16px #14F195)'}}
-          />
+          {/* S + SOLANA — igual que el logo oficial */}
+          <div className="flex items-center gap-3">
+            <img
+              src="/solana-logo.svg"
+              alt="Solana S"
+              className="h-7 w-auto"
+              style={{filter:'drop-shadow(0 0 8px #14F195)'}}
+            />
+            <span className="text-2xl sm:text-3xl font-bold tracking-widest"
+              style={{
+                background:'linear-gradient(90deg, #9945FF, #14F195)',
+                WebkitBackgroundClip:'text',
+                WebkitTextFillColor:'transparent',
+                backgroundClip:'text',
+                textShadow:'none',
+                letterSpacing:'0.15em'
+              }}>
+              SOLANA
+            </span>
+          </div>
         </div>
         <p className="text-lg mb-2" style={{color:'rgba(255,255,255,0.7)'}}>Adopta mascotas y dona con un click — powered by Solana Blinks</p>
         <div className="flex flex-wrap justify-center gap-2 mt-4 text-sm">
